@@ -1,27 +1,6 @@
 // ****************************************************************************************
 
-// console.log(a);
-// var a = 100;
-
-// function getA() {
-//   console.log(a);
-// }
-// getA();
-//op: undef, 100
-
-// ****************************************************************************************
-
-//NOTE: function at the time of hoisting
-// getA();
-// console.log(getA);
-
-// function getA() {
-//   console.log("Hello");
-// }
-
-// ****************************************************************************************
-
-//NOTE: nested function
+/* NOTE: nested function */
 // var a = 1000;
 // function getA() {
 //   var a = 100;
@@ -42,7 +21,7 @@
 
 // ****************************************************************************************
 
-//NOTE: nested function
+/*  NOTE: nested function */
 // var a = 1000;
 // function getA() {
 //   getB();
@@ -55,13 +34,3 @@
 // console.log("At last Line");
 
 // ****************************************************************************************
-//NOTE: Arrow function in hoisting
-// console.log(wishMe);
-// var wishMe = () => {
-//   console.log("Hello");
-// };
-// var a = 100;
-// console.log({ a });
-// a = wishMe();
-// console.log({ a });
-// console.log(wishMe());
