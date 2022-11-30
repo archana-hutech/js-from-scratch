@@ -20,7 +20,7 @@ console.log({ b }, typeof b);
 var c = null;
 console.log({ c }, typeof c);
 //
-console.log(typeof NaN);
+console.log(typeof NaN); //number
 //
 console.log(isNaN(10)); //false
 //
