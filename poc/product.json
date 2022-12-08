@@ -1,0 +1,195 @@
+{
+  "product": {
+    "name": "Banana",
+    "weight": 0,
+    "displayTitle": "<b>Banana</b>",
+    "description": "<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>",
+    "isActive": true,
+    "isPublic": true,
+    "itemType": "GOODS",
+    "isPhysicalItem": true,
+    "displayPrice": 0,
+    "sellingPrice": 0,
+    "categories": ["6814accb-cc50-4c6d-a17e-50640d48cfb1"],
+    "costPrice": null,
+    "trackInventory": true,
+    "countryOfOrigin": "India",
+    "hsnCode": "",
+    "sku": "",
+    "quantity": 0,
+    "hasOptions": true,
+    "options": [
+      {
+        "option": "Type",
+        "values": ["Red", "Lady Finger"],
+        "accepted": true
+      },
+      {
+        "option": "Size",
+        "values": ["500 gms", "1 Kg"],
+        "accepted": true
+      }
+    ],
+    "attributes": [
+      {
+        "name": "discount"
+      },
+      {
+        "name": "country",
+        "value": "India"
+      },
+      {
+        "name": "replaceProduct",
+        "value": true
+      },
+      {
+        "name": "quantity",
+        "value": 0
+      },
+      {
+        "name": "returnProduct",
+        "value": true
+      },
+      {
+        "name": "days",
+        "value": 7
+      },
+      {
+        "name": "dimensionWidth"
+      },
+      {
+        "name": "dimensionHeight"
+      },
+      {
+        "name": "dimensiondepth"
+      },
+      {
+        "name": "gst"
+      },
+      {
+        "name": "weightPrefix"
+      },
+      {
+        "name": "measurementType"
+      },
+      {
+        "name": "collections"
+      }
+    ],
+    "metaData": [],
+    "variants": [
+      {
+        "id": "a8eedff9-0733-4504-a7d2-485378881b47",
+        "sku": "",
+        "displayPrice": 128,
+        "sellingPrice": 128,
+        "attributes": [
+          {
+            "name": "discount",
+            "value": 0
+          }
+        ],
+        "gst": "",
+        "isActive": false,
+        "discount": 0,
+        "afterDiscountPrice": 0,
+        "weight": 0,
+        "maxOrderQuantity": 0,
+        "quantity": 0,
+        "combination": [],
+        "variantCode": "Red#1 Kg",
+        "name": "Red / 1 Kg"
+      },
+      {
+        "id": "7263b5b2-9b70-4483-82b5-0c8cae1acc20",
+        "sku": "",
+        "displayPrice": 400,
+        "sellingPrice": 400,
+        "attributes": [
+          {
+            "name": "discount",
+            "value": 0
+          }
+        ],
+        "gst": "",
+        "isActive": false,
+        "discount": 0,
+        "afterDiscountPrice": 0,
+        "weight": 0,
+        "maxOrderQuantity": 0,
+        "quantity": 0,
+        "combination": [],
+        "variantCode": "Lady Finger#1 Kg",
+        "name": "Lady Finger / 1 Kg"
+      },
+      {
+        "id": "4524df33-3958-4cb0-ac81-6a3ecf68183a",
+        "sku": "",
+        "displayPrice": 200,
+        "sellingPrice": 200,
+        "attributes": [
+          {
+            "name": "discount",
+            "value": 0
+          }
+        ],
+        "gst": "",
+        "isActive": false,
+        "discount": 0,
+        "afterDiscountPrice": 0,
+        "weight": 0,
+        "maxOrderQuantity": 0,
+        "quantity": 44,
+        "combination": [],
+        "variantCode": "Red#500 gms",
+        "name": "Red / 500 gms"
+      },
+      {
+        "id": "5a2a1b6c-5b4d-4167-9864-10ec28d6dec5",
+        "sku": "",
+        "displayPrice": 90,
+        "sellingPrice": 100,
+        "attributes": [
+          {
+            "name": "discount",
+            "value": "10.00"
+          }
+        ],
+        "gst": "",
+        "isActive": false,
+        "discount": "10.00",
+        "afterDiscountPrice": 0,
+        "weight": 0,
+        "maxOrderQuantity": 0,
+        "quantity": "21",
+        "combination": [],
+        "variantCode": "Lady Finger#500 gms",
+        "name": "Lady Finger / 500 gms"
+      }
+    ],
+    "media": [
+      {
+        "id": "5a227b89-e356-476b-b3aa-31100abaffd5",
+        "mediaType": "IMAGE",
+        "contentType": "image/jpeg",
+        "name": "download (5).jpg",
+        "alt": "download (5).jpg",
+        "url": "https://dev-huetech.s3.ap-south-1.amazonaws.com/stores/store_b9c413b4_9d99_4bec_bd52_c8389e95f440/media-upload/public/download%20%285%29.jpg",
+        "tags": null,
+        "createdAt": "2022-11-17T10:43:58.672Z",
+        "updatedAt": "2022-11-28T17:51:00.178Z",
+        "medialink": {
+          "id": "fbafe86d-c230-4620-a7d5-a56bd56ab7bb",
+          "mediaId": "5a227b89-e356-476b-b3aa-31100abaffd5",
+          "sourceId": "9de22f09-92e1-435d-b47b-1f7706c99e5e",
+          "createdAt": "2022-11-17T10:44:00.611Z",
+          "updatedAt": "2022-11-17T10:44:00.611Z"
+        },
+        "status": "exist",
+        "uid": "__AUTO__1670260426735_0__"
+      }
+    ],
+    "maxOrderQuantity": 5,
+    "tags": []
+  }
+}
