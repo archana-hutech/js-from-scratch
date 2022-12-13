@@ -1,4 +1,4 @@
-//TDZ : temporal dead zone is the zone/scope/time between hoisting the let and const varible till it's assignmened withn a value
+//TDZ : temporal dead zone is the zone/scope/time between hoisting the let and const varible till it's assignmened with a value
 //Script scope
 // console.log({ a });
 // var a = 100;
@@ -20,3 +20,26 @@
 //   let b;
 // }
 // getA();
+
+let a;
+const aa = 100;
+console.log("hello");
+console.log("hello");
+console.log("hello");
+console.log("hello");
+console.log("hello");
+console.log("hello");
+a = 100;
+
+function getA(c) {
+  let b;
+  console.log("hello");
+  console.log("hello");
+  console.log("hello");
+  console.log("hello", c);
+  console.log("hello");
+  console.log("hello");
+  b = 100;
+}
+
+getA(11);
