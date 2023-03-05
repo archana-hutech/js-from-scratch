@@ -17,15 +17,18 @@
 
 function getA() {
   let a = 100;
+  getB();
   function getB() {
     let b = 200;
     function getC() {
       let c = 300;
       function getD() {
-        //log
+        console.log({ c, b, a });
       }
     }
   }
 }
 
 //lexical chain
+
+console.log(getA());
