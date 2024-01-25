@@ -34,3 +34,12 @@
 // console.log("At last Line");
 
 // ****************************************************************************************
+
+var a = 100
+function getA(){
+    console.log(a)
+    var a = 200
+}
+console.log(a)
+getA()
+console.log(a)
