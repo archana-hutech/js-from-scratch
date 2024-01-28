@@ -3307,15 +3307,9 @@ const sampleReduceMapOutput9 = [
 //
 //
 //
-
-//s
-//
-//
 //
 //----------END OF ARRAY OF object WITH REDUCE-------------
 //----------START OF ARRAY OF element WITH REDUCE-------------
-
-//
 //
 //
 //
@@ -3361,11 +3355,63 @@ const sampleReduceMapOutput9 = [
 //
 //
 //
+//----------Advanced ARRAY OF object manipulation using REDUCE -------------
+// generate below outputs
+// 1){"veg":[...],"non-veg":[...]}  //list dish name only
+// 2){"veg":[...],"non-veg":[...]}  //list dish name, price,rating only
+// 3){"veg":13,"non-veg":11}
+// 4){Indian:[...],Italian:[...],Chines:[],...}  //list dish name only
+// 5){Indian:[...],Italian:[...],Chines:[],...}  //list dish name,price,rating
+// 6){Indian:[...],Italian:[...],Chines:[],...}  //whole dish details
+// 7){Indian:[...],Italian:[...],Chines:[],...}  //list dish name,price whos price <14
+// 8){popular:[], mostPopular:[],other:[]}  //list dish name,rating; popular=rating >=4.5, mostPopular=rating >=3.5,other:[]
+//
+//
 //
 //
 //----------END OF ARRAY OF element WITH REDUCE-------------
 //
 //
+//
+//__________________________________________________________
+//OTHER ARRAY METHODS TO GET HOLD ON
+// forIn
+const obj = {
+  dishName: "Salmon Teriyaki",
+  cuisine: "Japanese",
+  type: "non-veg",
+  price: 21.99,
+  rating: 4.7,
+  gst: 9,
+  grade: "MOST POPULAR",
+};
+for (let key in obj) {
+  console.log(key);
+}
+//_____OUTPUT_____
+// dishName
+// cuisine
+// type
+// price
+// rating
+// gst
+// grade
+//
+//
+//__________________________________________________________
+//forOf
+const myArray = [1, 3, 5, 17, 9, 7, 18];
+for (let ele of myArray) {
+  console.log(ele);
+}
+//_____OUTPUT_____
+// 1
+// 3
+// 5
+// 17
+// 9
+// 7
+// 18
 //
 //
 //
