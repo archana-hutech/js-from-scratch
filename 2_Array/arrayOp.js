@@ -876,7 +876,14 @@ const sampleMapOutput8 = [
   },
 ];
 //write your code
-// console.log(mapOutput8)
+const mapOutpt8 = dishes.map((item) => {
+  return item.rating >= 4.5
+    ? { ...item, grade: "MOST POPULAR" }
+    : item.rating >= 3.5
+    ? { ...item, grade: "POPULAR" }
+    : item;
+});
+// console.log(mapOutpt8);
 
 //added grade:- >=4.5(MOST POPULAR);>=3.5(POPULAR)
 const sampleMapOutput9 = [
@@ -1929,11 +1936,7 @@ const sampleForEachMapOutput8 = [
 const forEachMapOutput8 = [];
 dishes.forEach((f) => {
   forEachMapOutput8.push({
-    dishName: f.dishName,
-    cuisine: f.cuisine,
-    type: f.type,
-    price: f.price,
-    rating: f.rating,
+    ...f,
     title: `${f.dishName}/${f.cuisine}/${f.type}/with ${f.rating} rating`,
   });
 });
@@ -2158,24 +2161,33 @@ const sampleForEachMapOutput9 = [
 ];
 //write your code
 const forEachMapOutput9 = [];
-dishes.forEach((f) => {
-  let grade = "";
-  if (f.rating >= 4.5) {
-    grade = "MOST POPULAR";
-  } else if (f.rating >= 3.5) {
-    grade = "POPULAR";
-  }
-  forEachMapOutput9.push({
-    dishName: f.dishName,
-    cuisine: f.cuisine,
-    type: f.type,
-    price: f.price,
-    rating: f.rating,
-    gst: f.gst,
-    grade: grade,
-  });
+// dishes.forEach((f) => {
+//   let grade = "";
+//   if (f.rating >= 4.5) {
+//     grade = "MOST POPULAR";
+//   } else if (f.rating >= 3.5) {
+//     grade = "POPULAR";
+//   }
+//   forEachMapOutput9.push({
+//     dishName: f.dishName,
+//     cuisine: f.cuisine,
+//     type: f.type,
+//     price: f.price,
+//     rating: f.rating,
+//     gst: f.gst,
+//     grade: grade,
+//   });
+// });
+dishes.forEach((item) => {
+  forEachMapOutput9.push(
+    item.rating >= 4.5
+      ? { ...item, grade: "MOST POPULAR" }
+      : item.rating >= 3.5
+      ? { ...item, grade: "POPULAR" }
+      : item
+  );
 });
-// console.log(forEachMapOutput9)
+// console.log(forEachMapOutput9);
 //
 //
 //
@@ -2581,7 +2593,7 @@ const m6 = myNumbers.map((num) => {
 
 // 7)list all array number with additing up with next number(no next number means add 0)
 const m7 = myNumbers.map((num, index) => {
-  const nextNum = myNumbers[index + 1] || 0;
+  const nextNum = myNumbers?.[index + 1] || 0;
   return num + nextNum;
 });
 // console.log(m7);
@@ -3716,14 +3728,24 @@ const sampleReduceMapOutput9 = [
   },
 ];
 //write your code
+// const mapOutput9 = dishes.reduce((res, curr) => {
+//   let grade = "";
+//   if (curr.rating >= 4.5) {
+//     grade = "MOST POPULAR";
+//   } else if (curr.rating >= 3.5) {
+//     grade = "POPULAR";
+//   }
+//   res.push({ ...curr, grade });
+//   return res;
+// }, []);
 const mapOutput9 = dishes.reduce((res, curr) => {
-  let grade = "";
-  if (curr.rating >= 4.5) {
-    grade = "MOST POPULAR";
-  } else if (curr.rating >= 3.5) {
-    grade = "POPULAR";
-  }
-  res.push({ ...curr, grade });
+  res.push(
+    curr.rating >= 4.5
+      ? { ...curr, grade: "MOST POPULAR" }
+      : curr.rating >= 3.5
+      ? { ...curr, grade: "POPULAR" }
+      : curr
+  );
   return res;
 }, []);
 // console.log(mapOutput9);
@@ -3796,6 +3818,8 @@ const rf7 = dishes.reduce((res, cur) => {
 const rf8 = dishes.reduce((res, cur) => {
   if (cur.rating >= 4.5) res.push(cur);
   return res;
+  // if (cur.rating >= 4.5) return [...res, cur];
+  // return res;
 }, []);
 // console.log(rf8);
 
@@ -4272,24 +4296,64 @@ const adv7 = dishes.reduce((res, cur) => {
 // console.log(adv7);
 
 // 8){popular:[], mostPopular:[],other:[]}  //list dish name,rating; popular=rating >=4.5, mostPopular=rating >=3.5,other:[]
-const adv8 = dishes.reduce((res, cur) => {
-  const { dishName, rating } = cur;
-  if (rating >= 4.5) {
-    res.push({ dishName, price });
-  }
-  if (rating >= 3.5) {
-    res.push({ dishName, price });
-  }
+const adv8 = dishes.reduce(
+  (res, cur) => {
+    const { dishName, rating } = cur;
+    if (rating >= 4.5) {
+      res?.mostPopular.push({ dishName, rating });
+    }
+    if (rating >= 3.5) {
+      res?.popular?.push({ dishName, rating });
+    } else {
+      res?.other?.push({ dishName, rating });
+    }
+    return res;
+  },
+  { popular: [], mostPopular: [], other: [] }
+);
+//
 
+//
+//
+//----------END OF ARRAY OF element WITH REDUCE------------
+//
+//
+//
+//
+//----------RETURN BOOLEAN WITH REDUCE START-------------
+const number1 = [2, 4, 5, 6, 7, 8, 10, 13]; // hasEven=true
+const hasEven = number1.reduce((res, curr) => {
+  if (curr % 2 === 0) return (res = true);
   return res;
-}, {});
+}, false);
+// console.log(hasEven);
+
+const number2 = [2, 4, 5, 6, 7, 8, 10, 14]; // hasOdd=true
+const hasOdd = number2.reduce((res, curr) => {
+  if (curr % 2 === 1) return (res = true);
+  return res;
+}, false);
+// console.log(hasOdd);
+
+const number3 = [2, 4, 5, 6, 7, 8, 10, 13, 3]; // hasLargeNumber=true
+const hasLargeNumber = number3.reduce((res, curr) => {
+  if (curr > 10) return (res = true);
+  return res;
+}, false);
+// console.log(hasLargeNumber);
+
+const number4 = [2, 4, 5, 6, 7, 8, 10, 13]; // hasSmallNumber=true
+const hasSmallNumber = number4.reduce((res, curr) => {
+  if (curr < 10) return (res = true);
+  return res;
+}, false);
+// console.log(hasSmallNumber);
+
+//----------RETURN BOOLEAN WITH REDUCE START-------------
 //
 
 //
-//
-//----------END OF ARRAY OF element WITH REDUCE-------------
-//
-//
+
 //
 //__________________________________________________________
 //OTHER ARRAY METHODS TO GET HOLD ON
@@ -4316,6 +4380,42 @@ for (let res in obj) {
 // grade
 //
 //
+
+// return unique strings:
+const uniqueString = [
+  "Italian",
+  "Italian",
+  "Indian",
+  "Seafood",
+  "International",
+  "Japanese",
+  "Indian",
+  "American",
+  "Thai",
+  "Italian",
+  "Indian",
+  "French",
+  "Italian",
+  "Thai",
+  "Indian",
+  "French",
+  "Japanese",
+  "Indian",
+  "Mediterranean",
+  "Chinese",
+  "Italian",
+  "Indian",
+  "Chinese",
+  "Japanese",
+];
+const uniqueStr = uniqueString.reduce((res, curr) => {
+  if (!res.includes(curr)) {
+    res.push(curr);
+  }
+  return res;
+}, []);
+console.log(uniqueStr);
+
 //__________________________________________________________
 //forOf
 const myArray = [1, 3, 5, 17, 9, 7, 18];
