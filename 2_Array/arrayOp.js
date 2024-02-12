@@ -4414,7 +4414,7 @@ const uniqueStr = uniqueString.reduce((res, curr) => {
   }
   return res;
 }, []);
-console.log(uniqueStr);
+// console.log(uniqueStr);
 
 //__________________________________________________________
 //forOf
@@ -4433,3 +4433,7 @@ for (let ele of myArray) {
 //
 //
 //
+
+const arr = ["hi", "op", "po", "ui"];
+const kk = arr.fill("hello", 1, 3);
+console.log(arr);

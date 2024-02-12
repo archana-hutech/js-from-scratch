@@ -32,3 +32,152 @@ function getA() {
 //lexical chain
 
 console.log(getA());
+
+// ________________________________________________________
+// console.log(a);
+// var a;
+// ________________________________________________________
+// console.log(a);
+// let a;
+// ________________________________________________________
+// console.log(a);
+// {
+//   var a = 100;
+// }
+// console.log(a);
+// ________________________________________________________
+// console.log(a);
+// {
+//   let a = 100;
+// }
+// console.log(a);
+// ________________________________________________________
+// {
+//   let a = 100; //check in which scope/context memory is created
+// }
+// ________________________________________________________
+// {
+//   var a = 100; //check in which scope/context memory is created
+// }
+// ________________________________________________________
+// console.log(a);
+// console.log(b);
+// {
+//   var a = 100;
+//   {
+//     var b = 200;
+//     let a = 5;
+//     console.log(a);
+//   }
+//   console.log(a);
+//   console.log(b);
+// }
+// ________________________________________________________
+// console.log(a);
+// console.log(b);
+// let a = 100;
+// const b = 100;
+// console.log(a);
+// console.log(b);
+// ________________________________________________________
+// function varScoping() {
+//   var a = 1;
+//   if (true) {
+//     var a = 2;
+//     console.log(a);
+//     console.log(b);
+//     {
+//       var b = 3;
+//       console.log(b);
+//     }
+//     console.log(b);
+//   }
+//   console.log(b);
+//   console.log(a);
+// }
+// varScoping();
+// ________________________________________________________
+// function letScoping() {
+//   let a = 1;
+//   if (true) {
+//     let a = 2;
+//     console.log(a);
+//   }
+//   console.log(a);
+// }
+// letScoping();
+// ________________________________________________________
+// var a = 100;
+// function getA() {
+//   var a = 200;
+//   console.log(a, this.a);
+// }
+// getA();
+// ________________________________________________________
+// let a = 100;
+// function getA() {
+//   let a = 200;
+//   console.log(a, this.a); //how to log outside a variable eben if local has a variable
+// }
+// getA();
+// ________________________________________________________
+// console.log(this === window);
+// ________________________________________________________
+// console.log("hello world");   //example for not interpreter/compiled language
+// let a = 100;
+// let a = 200;
+// ________________________________________________________
+// function getA() {
+//   var a = 100;
+//   if (a > 200) {
+//     var b = 200;
+//   }
+//   console.log(a, b);
+// }
+// getA();
+// ________________________________________________________
+// function getA() {
+//   var a = 100;
+//   if (a < 200) {
+//     var b = 200;
+//   }
+//   console.log(a, b);
+// }
+// getA();
+// ________________________________________________________
+// function getA() {
+//   var a = 100;
+//   if (a < 200) {
+//     let b = 200;
+//   }
+//   console.log(a, b);
+// }
+// getA();
+// ________________________________________________________
+function getA() {
+  var a = 100;
+  {
+    var b = 200;
+  }
+  console.log(a, b);
+}
+getA();
+// ________________________________________________________
+// function getA() {
+//   var a = 100;
+//   {
+//     let b = 200;
+//   }
+//   console.log(a, b);
+// }
+// getA();
+
+// ________________________________________________________
+// var a = 100;
+// function getA() {
+//   console.log(a);
+//   var a = 200;
+// }
+// console.log(a);
+// getA();
+// console.log(a);

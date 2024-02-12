@@ -35,11 +35,17 @@
 
 // ****************************************************************************************
 
-var a = 100
-function getA(){
-    console.log(a)
-    var a = 200
-}
-console.log(a)
-getA()
-console.log(a)
+// var a = 100
+// function getA(){
+//     console.log(a)
+//     var a = 200
+// }
+// console.log(a)
+// getA()
+// console.log(a)
+
+// console.log(a);
+// var a;
+
+// console.log(a);
+// let a = 1;
