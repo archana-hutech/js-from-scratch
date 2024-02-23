@@ -15,23 +15,23 @@
 
 //scope chain
 
-function getA() {
-  let a = 100;
-  getB();
-  function getB() {
-    let b = 200;
-    function getC() {
-      let c = 300;
-      function getD() {
-        console.log({ c, b, a });
-      }
-    }
-  }
-}
+// function getA() {
+//   let a = 100;
+//   getB();
+//   function getB() {
+//     let b = 200;
+//     function getC() {
+//       let c = 300;
+//       function getD() {
+//         console.log({ c, b, a });
+//       }
+//     }
+//   }
+// }
 
 //lexical chain
 
-console.log(getA());
+// console.log(getA());
 
 // ________________________________________________________
 // console.log(a);
@@ -154,14 +154,14 @@ console.log(getA());
 // }
 // getA();
 // ________________________________________________________
-function getA() {
-  var a = 100;
-  {
-    var b = 200;
-  }
-  console.log(a, b);
-}
-getA();
+// function getA() {
+//   var a = 100;
+//   {
+//     var b = 200;
+//   }
+//   console.log(a, b);
+// }
+// getA();
 // ________________________________________________________
 // function getA() {
 //   var a = 100;
@@ -181,3 +181,48 @@ getA();
 // console.log(a);
 // getA();
 // console.log(a);
+
+// console.log(a);
+// console.log(b);
+// {
+//   var a = 100;
+//   {
+//     var b = 200;
+//     // console.log(a);
+//     let a = 5;
+//   }
+//   console.log(a);
+//   console.log(b);
+// }
+
+// function getValue() {
+//   var a = (b = 5); // only a is in local scope b & c are in global scope
+//   c = 300;
+//   console.log(a, b, c); //5 5 300
+// }
+// getValue();
+// console.log(c); //300
+// console.log(b); //5
+// console.log(a); //error a is not defined because function is destroyed
+
+// function otherSport() {
+//   function favoriteSport() {
+//     console.log(sport);
+//   }
+//   const sport = "volleybal";
+//   favoriteSport();
+// }
+// const sport = "basketball";
+// otherSport();
+
+const greeting = () => {
+  console.log("hi!");
+};
+
+greeting();
+
+setTimeout(function wakeup() {
+  console.log("I'm awake!");
+}, 1000);
+
+console.log("hi again!");
