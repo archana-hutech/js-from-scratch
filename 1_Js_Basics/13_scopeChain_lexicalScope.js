@@ -215,14 +215,66 @@
 // const sport = "basketball";
 // otherSport();
 
-const greeting = () => {
-  console.log("hi!");
-};
+// const greeting = () => {
+//   console.log("hi!");
+// };
 
-greeting();
+// greeting();
 
-setTimeout(function wakeup() {
-  console.log("I'm awake!");
-}, 1000);
+// setTimeout(function wakeup() {
+//   console.log("I'm awake!");
+// }, 1000);
 
-console.log("hi again!");
+// console.log("hi again!");
+
+// var a = 100;
+// {
+//   // console.log({ a, b }); //ReferenceError: b is not defined
+//   var a = (b = 200);
+//   console.log({ a, b });
+// }
+// console.log({ a, b });
+
+//  console.log({ a, b }); //ReferenceError: b is not defined
+// var a = (b = 300);
+// console.log({ a, b });
+
+// console.log({ a }); //{ a: undefined }
+//  console.log({ b });   //ReferenceError: b is not defined
+// var a = (b = 300);
+// console.log({ a, b });
+
+// var a = 200;
+// {
+//   // console.log({ a }); //ReferenceError: Cannot access 'a' before initialization
+//   let a = 300;
+//   console.log({ a });
+// }
+// console.log({ a });
+
+// 1. does this create block scope
+//2. what will be the output
+// var a = 200; //{ a: 200 }{ a: 400 }{ a: 400 }
+// {
+//   console.log({ a });
+//   var a = 400;
+//   console.log({ a });
+// }
+// console.log({ a });
+
+// function manipulateArray(arr) {
+//   arr.push(5);
+//   arr = [1];
+//   return arr;
+// }
+// let list = [1, 2, 3, 4];
+// manipulateArray(list);
+// console.log(list);
+
+// list = manipulateArray(list);
+// console.log(list);
+
+// function manipulateArray(arr) {: This declares a function named manipulateArray that takes an array arr as a parameter.
+// arr.push(5);: This modifies the input array by adding the element 5 to the end of it.
+// arr = [1];: This line creates a new array [1] and assigns it to the variable arr. However, this assignment only affects the local variable arr inside the function, not the original array passed as an argument.
+// return arr;: The function returns the local variable arr, which now refers to the new array [1].

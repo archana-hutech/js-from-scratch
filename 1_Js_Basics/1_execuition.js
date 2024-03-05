@@ -109,3 +109,10 @@ for (var i = 1; i <= 5; i++) {
 }
 console.log("outside: ", i);
 if (i < 10) i = 10;
+
+// let a;
+// a = 4;
+// console.log(a);
+
+var a = 7;
+console.log(a);

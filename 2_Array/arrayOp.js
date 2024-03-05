@@ -222,7 +222,8 @@ const sampleMapOutput1 = [
   "Salmon Teriyaki",
 ];
 //write your code
-// console.log(mapOutput1)
+const mapOutput01 = dishes.map((dish) => dish.dishName);
+console.log(mapOutput01);
 
 const sampleMapOutput2 = [
   "Italian",

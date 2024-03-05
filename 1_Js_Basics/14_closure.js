@@ -111,10 +111,20 @@
 
 //more secure with the help of closure
 function attachEventListener() {
-  
   let count = 0;
   document.getElementById("clickMe").addEventListener("click", function xyz() {
     console.log("button clicked", ++count);
   });
 }
 attachEventListener();
+
+let arr = [];
+for (var i = 0; i < 3; i++) {
+  arr[i] = function () {
+    console.log("My value is:", i);
+  };
+}
+
+arr[0]();
+arr[1]();
+arr[2]();
