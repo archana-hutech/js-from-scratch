@@ -10,7 +10,7 @@ function addTwoAsync(a, b) {
 
 function addTwoCallback(a, b, fn) {
   setTimeout(() => {
-    return a + b;
+    fn(a + b);
   }, 2000);
 }
 
