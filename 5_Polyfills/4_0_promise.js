@@ -1,57 +1,75 @@
-function myPromise(executor) {
+function MyPromise(myFn) {
   let value;
   let error;
+  let fulfilled = false;
+  let rejected = false;
+  let called = false;
   let onResolve;
   let onReject;
-  let isFulfilled = false;
-  let isRejected = false;
-  let isCalled = false;
+  let onFinally;
 
-  function resolve(result) {
-    isFulfilled = true;
-    value = result;
-    if (typeof onResolve == "function" && !isCalled) {
+  function resolve(val) {
+    value = val;
+    fulfilled = true;
+    if (!called && typeof onResolve == "function") {
+      called = true;
       onResolve(value);
-      isCalled = true;
+      if (onFinally) onFinally();
     }
   }
 
   function reject(err) {
-    isRejected = true;
     error = err;
-    if (typeof onReject == "function" && !isCalled) {
+    rejected = true;
+    if (!called && typeof onReject == "function") {
+      called = true;
       onReject(error);
-      isCalled = true;
+      if (onFinally) onFinally();
     }
   }
 
-  this.then = function (thenHandler) {
-    onResolve = thenHandler;
-    if (!isCalled && isFulfilled) {
-      onResolve(value);
-      isCalled = true;
+  this.then = function (thenFn) {
+    onResolve = thenFn;
+    if (!called && fulfilled) {
+      called = true;
+      thenFn(value);
+      if (onFinally) onFinally();
     }
     return this;
   };
 
-  this.catch = function (catchHandler) {
-    onReject = catchHandler;
-    if (!isCalled && isRejected) {
+  this.catch = function (catchFn) {
+    onReject = catchFn;
+    if (!called && rejected) {
+      called = true;
       onReject(error);
-      isCalled = true;
+      if (onFinally) onFinally();
     }
     return this;
   };
 
-  executor(resolve, reject);
+  this.finally = function (finallyFn) {
+    onFinally = finallyFn;
+    if (called) {
+      onFinally();
+    }
+    return this;
+  };
+
+  myFn(resolve, reject);
 }
 
-const wish = new myPromise((resolve, reject) => {
+const wish = new MyPromise((resolve, reject) => {
   setTimeout(() => {
-    resolve(`Hi`);
+    reject("Hi");
   }, 1000);
 });
 
-wish.then((res) => {
-  console.log(res);
-});
+wish
+  .then((res) => {
+    console.log(`Then    : ${res}`);
+  })
+  .catch((err) => console.log(`Catch    : ${err}`))
+  .finally(() => {
+    console.log(`Finaly.......`);
+  });
